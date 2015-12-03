@@ -23,22 +23,35 @@ public class Controle {
     
     private LogsAcess logs = new LogsAcess();
     private LineLog line = new LineLog();
-    private FileHandle file = new FileHandle();
+    //private FileHandle file = new FileHandle();
+
+    public LogsAcess getLogs() {
+        return logs;
+    }
+
+    public LineLog getLine() {
+        return line;
+    }
+
+    public Controle() {
+    }
     
     
-    void read(String split, String path )
+    
+    
+    void read(String ipP, String dataP )
     {
         ArrayList<String> lineSplit = new ArrayList();
-        String ipS;
+        //String ipS;
         String[] ipSV = new String[4];
         
-        file.setPathFile(path);
-        file.readFile("\\|");
+        //file.setPathFile(path);
+        //file.readFile("\\|");
         
-        lineSplit = file.getWordList();
-        ipS = lineSplit.get(0);
+        //lineSplit = file.getWordList();
+        //ipS = lineSplit.get(0);
         
-        ipSV = ipS.split(".");
+        ipSV = ipP.split("\\W");
        
         IP ip = new IP(ipSV[0], ipSV[1], ipSV[2], ipSV[3]);
         
@@ -46,8 +59,8 @@ public class Controle {
         
         line.setId();
         
-        String data = lineSplit.get(1);
-        String[] dataS = data.split("\\W");
+        //String data = lineSplit.get(1);
+        String[] dataS = dataP.split("\\W");
         
         Data dataV = new Data(dataS[0], dataS[1], dataS[2]);
         Hora hora = new Hora(dataS[3], dataS[4], dataS[5], dataS[6]);
@@ -58,7 +71,7 @@ public class Controle {
         
         this.line.setTimestap(dataClock);
         
-        CodigoHttp statusHttp = new CodigoHttp(lineSplit.get(2));
+        //CodigoHttp statusHttp = new CodigoHttp(lineSplit.get(2));
         
         //this.line.setCodigo(statusHttp);
         

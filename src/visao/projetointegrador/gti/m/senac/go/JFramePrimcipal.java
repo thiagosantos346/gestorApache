@@ -9,8 +9,17 @@ package visao.projetointegrador.gti.m.senac.go;
  *
  * @author User
  */
-public class JFramePrimcipal extends javax.swing.JFrame {
 
+import bin.projetointegrador.gti.m.senac.go.FileDir;
+import bin.projetointegrador.gti.m.senac.go.FileHandle;
+
+public class JFramePrimcipal extends javax.swing.JFrame {
+    
+    private FileDir fileOpen = new FileDir();
+    private String setLocation;
+    private FileHandle leitorArquivo = new FileHandle();
+    
+    
     /**
      * Creates new form JFramePrimcipal
      */
@@ -50,6 +59,10 @@ public class JFramePrimcipal extends javax.swing.JFrame {
         getContentPane().setLayout(new java.awt.CardLayout());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultados Estatísticos"));
+        jPanel1.setName("Lista de Hosts "); // NOI18N
+        jPanel1.setOpaque(false);
+        jPanel1.setPreferredSize(new java.awt.Dimension(400, 580));
+        jPanel1.setRequestFocusEnabled(false);
         jPanel1.setLayout(new java.awt.GridLayout(2, 0));
 
         jTableAcessos.setAutoCreateRowSorter(true);
@@ -105,6 +118,11 @@ public class JFramePrimcipal extends javax.swing.JFrame {
 
         jMenuAbrir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
         jMenuAbrir.setText("Abrir");
+        jMenuAbrir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuAbrirActionPerformed(evt);
+            }
+        });
         jMenuArquivo.add(jMenuAbrir);
 
         jMenuFechar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
@@ -144,6 +162,18 @@ public class JFramePrimcipal extends javax.swing.JFrame {
         // TODO add your handling code here:
          System.exit(1);
     }//GEN-LAST:event_jMenuSairActionPerformed
+
+    private void jMenuAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAbrirActionPerformed
+            // TODO add your handling code here:
+        
+    
+            //this.fileOpen
+        this.setLocation = fileOpen.search();
+        this.leitorArquivo.setPathFile(setLocation);
+        this.leitorArquivo.readFile("\\|");
+        //wordListSplit
+            
+    }//GEN-LAST:event_jMenuAbrirActionPerformed
 
     /**
      * @param args the command line arguments

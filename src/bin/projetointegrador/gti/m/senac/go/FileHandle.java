@@ -28,12 +28,14 @@ public class FileHandle {
     private int numberWords = 0;
     public int numberChars = 0;
     private int preSize = 0;
-
+    
+    Controle controle = new Controle();
+    
     private ArrayList<String> wordList = new ArrayList();
     private ArrayList<String> wordListQuant = new ArrayList();
     private ArrayList<String> wordListSplit = new ArrayList();
 
-    FileHandle() {
+    public FileHandle() {
 
         this.charset = StandardCharsets.ISO_8859_1;
 
@@ -125,7 +127,9 @@ public class FileHandle {
                 lineVetor = line.split(split);
 
                 this.numberWords += lineVetor.length;
-
+                
+                this.controle.read(lineVetor[0], lineVetor[1]);
+                
                 for(int a = 0; a < lineVetor.length; a++) {
 
                     if(!lineVetor[a].isEmpty()== true) {
