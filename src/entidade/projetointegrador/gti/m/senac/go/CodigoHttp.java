@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entidade.projetointegrador.gti.m.senac.go;
+package entidade.projetoStringegrador.gti.m.senac.go;
 
 import java.util.ArrayList;
 
@@ -12,53 +12,123 @@ import java.util.ArrayList;
  * @author User
  */
 public class CodigoHttp {
-    
-    private int codigo;
-    private final ArrayList<String> DESCRICAO = new ArrayList();
-    private  ArrayList<String> code_list = new ArrayList();
-    private String[] values = new String[]{
-        "100" , " Continue (1.1)",  "101" , " Protocolos de comutação (1.1)", "200" , " OK", "201" , " Criado",
-                "202" , " Aceite",
-                "203" , " A informação não-autorizada (1.1)",
-                "204" , " Nenhum conteúdo",
-                "205" , " Conteúdo Reset (1.1)",
-                "206" , " conteúdo parcial (1,1)",
-                "300" , " Escolhas múltiplas (1,1)",
-                "301" , " Movido permanentemente",
-                "302" , " Encontrado (1.1), Movido temporariamente (1,0)",
-                "303" , " Ver Outros (1,1)",
-                "304" , " não modificado",
-                "305" , " Use Proxy (1.1)",
-                "307" , " Redirect Temporária (1.1)",
-                "400" , " Bad Request",
-                "401" , " Unauthorized",
-                "402" , " Pagamento obrigatório (1.1)",
-                "403" , " Proibido",
-                "404", " não encontrado",
-                "405" , " Método não permitido (1.1)",
-                "406" , " Não aceitável (1,1)",
-                "407" , " Autenticação de proxy necessária (1.1)",
-                "408" , " pedido Time-out (1.1)",
-                "409" , " Conflito (1.1)",
-                "410" , " Gone (1.1)",
-                "411" , " comprimento necessário (1.1)",
-                "412" , " Condição prévia falhada (1.1)",
-                "413" , " pedido Entidade muito grande (1,1)",
-                "414" , " Request-URI muito grande (1,1)",
-                "415" , " Tipo de mídia não suportado (1.1)",
-                "416" , " Intervalo solicitado não satisfatório (1.1)",
-                "417" , " Expectativa falhada (1.1)",
-                "500" , " Internal Server Error",
-                "501" , " não implementado",
-                "502"	, " Bad Gateway",
-                "503" , " serviço indisponível",
-                "504" , " Gateway Time-out (1.1)",
-                "505" , " Versão HTTP não suportada (1.1)"
+
+    private String codigo;
+
+    private String[] codes = new String[]{
+        "101",
+        "200",
+        "201",
+        "100",
+        "202",
+        "203",
+        "204",
+        "205",
+        "206",
+        "300",
+        "301",
+        "302",
+        "303",
+        "304",
+        "305",
+        "307",
+        "400",
+        "401",
+        "402",
+        "403",
+        "404",
+        "405",
+        "406",
+        "407",
+        "408",
+        "409",
+        "410",
+        "411",
+        "412",
+        "413",
+        "414",
+        "415",
+        "416",
+        "417",
+        "500",
+        "501",
+        "502",
+        "503",
+        "504",
+        "505",
+    };
+
+    private String[] status = new String[]{
+        " Continue (1.1)",
+        " Protocolos de comutação (1.1)",
+        " OK",
+        " Criado",
+        " Aceite",
+        " A informação não-autorizada (1.1)",
+        " Nenhum conteúdo",
+        " Conteúdo Reset (1.1)",
+        " conteúdo parcial (1,1)",
+        " Escolhas múltiplas (1,1)",
+        " Movido permanentemente",
+        " Encontrado (1.1), Movido temporariamente (1,0)",
+        " Ver Outros (1,1)",
+        " não modificado",
+        " Use Proxy (1.1)",
+        " Redirect Temporária (1.1)",
+        " Bad Request",
+        " Unauthorized",
+        " Pagamento obrigatório (1.1)",
+        " Proibido",
+        " não encontrado",
+        " Método não permitido (1.1)",
+        " Não aceitável (1,1)",
+        " Autenticação de proxy necessária (1.1)",
+        " pedido Time-out (1.1)",
+        " Conflito (1.1)",
+        " Gone (1.1)",
+        " comprimento necessário (1.1)",
+        " Condição prévia falhada (1.1)",
+        " pedido Entidade muito grande (1,1)",
+        " Request-URI muito grande (1,1)",
+        " Tipo de mídia não suportado (1.1)",
+        " Intervalo solicitado não satisfatório (1.1)",
+        " Expectativa falhada (1.1)",
+        " Internal Server Error",
+        " não implementado",
+        " Bad Gateway",
+        " serviço indisponível",
+        " Gateway Time-out (1.1)",
+        " Versão HTTP não suportada (1.1)"
+
     };
     
-   
+    private final ArrayList<String> DESCRICAO = new ArrayList();
+    private final ArrayList<String> CODE_LIST = new ArrayList();
 
-    public int getCodigo() {
+    public CodigoHttp(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    
+    
+    public CodigoHttp()
+    {
+        //for(int i=0; i< this.codes.length; i++)
+        //{
+        //    this.CODE_LIST.add(this.codes[i]);
+        //    this.DESCRICAO.add(this.status[i]);
+        //
+        //}
+    }
+
+    
+    
+    
+    public String getCodigo() {
         return codigo;
     }
 
@@ -67,10 +137,7 @@ public class CodigoHttp {
     }
 
     public ArrayList<String> getCODE_LIST() {
-        return code_list;
+        return CODE_LIST;
     }
-    
-    
-    
-    
+
 }

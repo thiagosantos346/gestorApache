@@ -16,10 +16,11 @@ public class Hora {
     private String horas;
     private String utc;
     
-    public Hora(String segundos, String minutos, String horas) {
+    public Hora(String segundos, String minutos, String horas, String utc) {
         this.segundos = segundos;
         this.minutos = minutos;
         this.horas = horas;
+        this.utc = utc;
     }
 
     public String getUtc() {

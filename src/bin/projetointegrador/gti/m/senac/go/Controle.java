@@ -5,6 +5,10 @@
  */
 package bin.projetointegrador.gti.m.senac.go;
 
+import entidade.projetoStringegrador.gti.m.senac.go.CodigoHttp;
+import entidade.projetoStringegrador.gti.m.senac.go.Hora;
+import entidade.projetointegrador.gti.m.senac.go.Data;
+import entidade.projetointegrador.gti.m.senac.go.DataHora;
 import entidade.projetointegrador.gti.m.senac.go.IP;
 import entidade.projetointegrador.gti.m.senac.go.LineLog;
 import entidade.projetointegrador.gti.m.senac.go.LogsAcess;
@@ -17,9 +21,9 @@ import java.util.ArrayList;
 
 public class Controle {
     
-    LogsAcess logs = new LogsAcess();
-    LineLog line = new LineLog();
-    FileHandle file = new FileHandle();
+    private LogsAcess logs = new LogsAcess();
+    private LineLog line = new LineLog();
+    private FileHandle file = new FileHandle();
     
     
     void read(String split, String path )
@@ -38,10 +42,29 @@ public class Controle {
        
         IP ip = new IP(ipSV[0], ipSV[1], ipSV[2], ipSV[3]);
         
+        this.line.setIp(ip);
+        
         line.setId();
         
-        line.setIp(ip);
+        String data = lineSplit.get(1);
+        String[] dataS = data.split("\\W");
         
+        Data dataV = new Data(dataS[0], dataS[1], dataS[2]);
+        Hora hora = new Hora(dataS[3], dataS[4], dataS[5], dataS[6]);
+        
+        
+        DataHora dataClock = new DataHora(dataV, hora);
+        
+        
+        this.line.setTimestap(dataClock);
+        
+        CodigoHttp statusHttp = new CodigoHttp(lineSplit.get(2));
+        
+        //this.line.setCodigo(statusHttp);
+        
+        
+        
+        //[27/Nov/2015:10:03:54 -0200] 
     }
     
     
