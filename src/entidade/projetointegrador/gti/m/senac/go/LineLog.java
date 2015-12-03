@@ -16,14 +16,14 @@ public class LineLog{
     private IP ip;
     private DataHora timestap;
     //private CodigoHttp codigo;
-    private String headerHttp;
+    //private String headerHttp;
 
-    public LineLog(IP ip, DataHora timestap, /*CodigoHttp codigo,*/ String headerHttp) {
+    public LineLog(IP ip, DataHora timestap/*CodigoHttp codigo,String headerHttp*/) {
         this.id = id++;
         this.ip = ip;
         this.timestap = timestap;
         //this.codigo = codigo;
-        this.headerHttp = headerHttp;
+        //this.headerHttp = headerHttp;
     }
 
     
@@ -50,9 +50,9 @@ public class LineLog{
     }
 
     */
-    public void setHeaderHttp(String headerHttp) {
-        this.headerHttp = headerHttp;
-    }
+    //public void setHeaderHttp(String headerHttp) {
+    //    this.headerHttp = headerHttp;
+    //}
 
     
     public Integer getId() {

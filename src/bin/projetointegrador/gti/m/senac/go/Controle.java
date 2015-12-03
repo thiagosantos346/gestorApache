@@ -6,7 +6,7 @@
 package bin.projetointegrador.gti.m.senac.go;
 
 import entidade.projetoStringegrador.gti.m.senac.go.CodigoHttp;
-import entidade.projetoStringegrador.gti.m.senac.go.Hora;
+import entidade.projetointegrador.gti.m.senac.go.Hora;
 import entidade.projetointegrador.gti.m.senac.go.Data;
 import entidade.projetointegrador.gti.m.senac.go.DataHora;
 import entidade.projetointegrador.gti.m.senac.go.IP;
@@ -29,9 +29,9 @@ public class Controle {
         return logs;
     }
 
-    public LineLog getLine() {
-        return line;
-    }
+    //public LineLog getLine() {
+    //    return line;
+    //}
 
     public Controle() {
     }
@@ -39,45 +39,29 @@ public class Controle {
     
     
     
-    void read(String ipP, String dataP )
+    void read(String IpParametro, String dataP )
     {
-        ArrayList<String> lineSplit = new ArrayList();
-        //String ipS;
-        String[] ipSV = new String[4];
         
-        //file.setPathFile(path);
-        //file.readFile("\\|");
+        String[] IpVetorSplit = new String[4];
         
-        //lineSplit = file.getWordList();
-        //ipS = lineSplit.get(0);
-        
-        ipSV = ipP.split("\\W");
-       
-        IP ip = new IP(ipSV[0], ipSV[1], ipSV[2], ipSV[3]);
-        
-        this.line.setIp(ip);
-        
+        IpVetorSplit = IpParametro.split("\\W");
+        IP ip = new IP(IpVetorSplit[0], IpVetorSplit[1], IpVetorSplit[2], IpVetorSplit[3]);
+        this.line.setIp(ip); 
         line.setId();
-        
-        //String data = lineSplit.get(1);
         String[] dataS = dataP.split("\\W");
         
-        Data dataV = new Data(dataS[0], dataS[1], dataS[2]);
-        Hora hora = new Hora(dataS[3], dataS[4], dataS[5], dataS[6]);
+        for(int i=0; i < dataS.length; i++)
+        {
+            System.out.print("\n -> :"+dataS[i]);
+        }
         
-        
-        DataHora dataClock = new DataHora(dataV, hora);
-        
-        
+        Data dataVetor = new Data(dataS[2], dataS[3], dataS[4]);
+        Hora hora = new Hora(dataS[5], dataS[6], dataS[7], dataS[9]);
+        DataHora dataClock = new DataHora(dataVetor, hora);
         this.line.setTimestap(dataClock);
         
-        //CodigoHttp statusHttp = new CodigoHttp(lineSplit.get(2));
+        logs.add(line);
         
-        //this.line.setCodigo(statusHttp);
-        
-        
-        
-        //[27/Nov/2015:10:03:54 -0200] 
     }
     
     

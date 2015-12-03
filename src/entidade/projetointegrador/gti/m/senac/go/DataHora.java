@@ -5,7 +5,7 @@
  */
 package entidade.projetointegrador.gti.m.senac.go;
 
-import entidade.projetoStringegrador.gti.m.senac.go.Hora;
+import entidade.projetointegrador.gti.m.senac.go.Hora;
 import java.time.Clock;
 import java.util.Timer;
 import static javafx.util.Duration.seconds;
@@ -60,6 +60,24 @@ public class DataHora {
         this.hora = hora;
     }
     
+    public String getDataStamp()
+    {
     
+        String dateRetorno;
+        
+        dateRetorno = this.data.getDia()+"/"+this.getData().getMes()+"/"+this.getData().getAno();
+        
+        return dateRetorno;
+    }
+    
+    public String getTimeStamp()
+    {
+    
+        String dateRetorno;
+        
+        dateRetorno = this.hora.getHoras()+"/"+this.hora.getMinutos()+"/"+this.hora.getSegundos();
+        
+        return dateRetorno;
+    }
     
 }

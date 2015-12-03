@@ -29,7 +29,7 @@ public class FileHandle {
     public int numberChars = 0;
     private int preSize = 0;
     
-    Controle controle = new Controle();
+    public Controle controle = new Controle();
     
     private ArrayList<String> wordList = new ArrayList();
     private ArrayList<String> wordListQuant = new ArrayList();
@@ -37,7 +37,7 @@ public class FileHandle {
 
     public FileHandle() {
 
-        this.charset = StandardCharsets.ISO_8859_1;
+        this.charset = StandardCharsets.UTF_8;
 
     }
 
@@ -128,7 +128,7 @@ public class FileHandle {
 
                 this.numberWords += lineVetor.length;
                 
-                this.controle.read(lineVetor[0], lineVetor[1]);
+                this.controle.read(lineVetor[0], lineVetor[1] );
                 
                 for(int a = 0; a < lineVetor.length; a++) {
 

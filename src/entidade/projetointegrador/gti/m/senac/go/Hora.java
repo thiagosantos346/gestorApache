@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entidade.projetoStringegrador.gti.m.senac.go;
+package entidade.projetointegrador.gti.m.senac.go;
 
 /**
  *
@@ -16,7 +16,7 @@ public class Hora {
     private String horas;
     private String utc;
     
-    public Hora(String segundos, String minutos, String horas, String utc) {
+    public Hora(String horas, String minutos, String segundos, String utc) {
         this.segundos = segundos;
         this.minutos = minutos;
         this.horas = horas;

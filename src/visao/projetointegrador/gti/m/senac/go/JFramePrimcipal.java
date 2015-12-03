@@ -12,6 +12,9 @@ package visao.projetointegrador.gti.m.senac.go;
 
 import bin.projetointegrador.gti.m.senac.go.FileDir;
 import bin.projetointegrador.gti.m.senac.go.FileHandle;
+import entidade.projetointegrador.gti.m.senac.go.LineLog;
+import entidade.projetointegrador.gti.m.senac.go.LogsAcess;
+import java.util.ArrayList;
 
 public class JFramePrimcipal extends javax.swing.JFrame {
     
@@ -52,6 +55,7 @@ public class JFramePrimcipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setLocationByPlatform(true);
         setMaximumSize(new java.awt.Dimension(1366, 768));
         setMinimumSize(new java.awt.Dimension(683, 384));
         setName("Analizar Logs"); // NOI18N
@@ -86,7 +90,7 @@ public class JFramePrimcipal extends javax.swing.JFrame {
         jPanel1.add(jScrollPane2);
 
         jPanel2.setPreferredSize(new java.awt.Dimension(70, 235));
-        jPanel2.setLayout(new java.awt.GridLayout());
+        jPanel2.setLayout(new java.awt.GridLayout(1, 0));
 
         jTableEstatisticos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -171,7 +175,21 @@ public class JFramePrimcipal extends javax.swing.JFrame {
         this.setLocation = fileOpen.search();
         this.leitorArquivo.setPathFile(setLocation);
         this.leitorArquivo.readFile("\\|");
-        //wordListSplit
+        
+        LogsAcess log = new LogsAcess();
+        LineLog line = new LineLog();
+        log = this.leitorArquivo.controle.getLogs();
+        ArrayList<LineLog> linesLogs = new ArrayList();
+        linesLogs = log.getLine();
+        System.out.print("xz");
+        
+        for(int xz = 0; xz < linesLogs.size(); xz++ )
+        {
+            System.out.print(linesLogs.get(xz).getTimestap().getDataStamp()+"\n");
+            System.out.print(linesLogs.get(xz).getTimestap().getTimeStamp()+"\n");
+            //System.out.print(log.getLine().get(xz));
+        }
+        
             
     }//GEN-LAST:event_jMenuAbrirActionPerformed
 

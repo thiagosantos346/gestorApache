@@ -20,8 +20,9 @@ public class LogsAcess {
     
 
     public void add(LineLog line) {
-        this.idLineLog.add(id++);
-        this.line.add(line);
+        this.idLineLog.add(id);
+        this.line.add(id, line);
+        System.out.print("\n ::::::::"+this.line.size());
         id++;
         
     }

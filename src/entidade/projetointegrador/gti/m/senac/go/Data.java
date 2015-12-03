@@ -15,12 +15,12 @@ public class Data {
 
     private String dia;
     private String mes;
-    private String hora;
+    private String ano;
 
-    public Data(String dia, String mes, String hora) {
+    public Data(String dia, String mes, String ano) {
         this.dia = dia;
         this.mes = mes;
-        this.hora = hora;
+        this.ano = ano;
 
     }
 
@@ -32,7 +32,7 @@ public class Data {
         return mes;
     }
 
-    public String getHora() {
-        return hora;
+    public String getAno() {
+        return ano;
     }
 }
