@@ -27,41 +27,106 @@ public class JFramePrimcipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedAcessos = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableAcessos = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableEstatisticos = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuArquivo = new javax.swing.JMenu();
+        jMenuAbrir = new javax.swing.JMenuItem();
+        jMenuFechar = new javax.swing.JMenuItem();
+        jMenuSair = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridBagLayout());
+        setBackground(new java.awt.Color(255, 255, 255));
+        setMaximumSize(new java.awt.Dimension(1366, 768));
+        setMinimumSize(new java.awt.Dimension(683, 384));
+        setName("Analizar Logs"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(384, 683));
+        getContentPane().setLayout(new java.awt.CardLayout());
 
-        jMenu1.setText("File");
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultados Estatísticos"));
+        jPanel1.setLayout(new java.awt.GridLayout(2, 0));
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setText("Abrir");
-        jMenu1.add(jMenuItem1);
+        jTableAcessos.setAutoCreateRowSorter(true);
+        jTableAcessos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTableAcessos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Host", "Frequênica", "Porcentagem"
+            }
+        ));
+        jTableAcessos.setEditingColumn(0);
+        jTableAcessos.setEditingRow(0);
+        jTableAcessos.setMinimumSize(new java.awt.Dimension(200, 200));
+        jScrollPane2.setViewportView(jTableAcessos);
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setText("Fechar");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.add(jScrollPane2);
+
+        jPanel2.setPreferredSize(new java.awt.Dimension(70, 235));
+        jPanel2.setLayout(new java.awt.GridLayout());
+
+        jTableEstatisticos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Cálculo", "Resultado"
+            }
+        ));
+        jTableEstatisticos.setMinimumSize(new java.awt.Dimension(60, 60));
+        jScrollPane1.setViewportView(jTableEstatisticos);
+
+        jPanel2.add(jScrollPane1);
+
+        jPanel1.add(jPanel2);
+
+        jTabbedAcessos.addTab("Tabela de Acessos", jPanel1);
+
+        getContentPane().add(jTabbedAcessos, "Acesos");
+        jTabbedAcessos.getAccessibleContext().setAccessibleName("jTableAcessos");
+
+        jMenuArquivo.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jMenuArquivo.setText("File");
+        jMenuArquivo.setMinimumSize(new java.awt.Dimension(400, 400));
+
+        jMenuAbrir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuAbrir.setText("Abrir");
+        jMenuArquivo.add(jMenuAbrir);
+
+        jMenuFechar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuFechar.setText("Fechar");
+        jMenuFechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                jMenuFecharActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        jMenuArquivo.add(jMenuFechar);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setText("Sair");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMenuSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuSair.setText("Sair");
+        jMenuSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                jMenuSairActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        jMenuArquivo.add(jMenuSair);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jMenuArquivo);
+        jMenuArquivo.getAccessibleContext().setAccessibleName("Arquivo");
 
         jMenu2.setText("Edit");
         jMenuBar1.add(jMenu2);
@@ -71,14 +136,14 @@ public class JFramePrimcipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void jMenuFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuFecharActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_jMenuFecharActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void jMenuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSairActionPerformed
         // TODO add your handling code here:
          System.exit(1);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_jMenuSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,11 +181,18 @@ public class JFramePrimcipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuItem jMenuAbrir;
+    private javax.swing.JMenu jMenuArquivo;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuFechar;
+    private javax.swing.JMenuItem jMenuSair;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTabbedPane jTabbedAcessos;
+    private javax.swing.JTable jTableAcessos;
+    private javax.swing.JTable jTableEstatisticos;
     // End of variables declaration//GEN-END:variables
 }
